@@ -78,12 +78,12 @@ ABER: _"... sie können aber nur eine Ergänzung zu bestehenden Prozessen und k�
 
 <div class="right">
 
+__Herausforderungen:__
+
 + Wegbreiten und -untergründe
 + variierende Bordsteinkanten
 + Hindernisse wie Treppen, Poller, Cafe-Tische etc.
 + Anstiege und Gefälle
-
-__Bild einer Karte einfügen!__
 
 </div>
 </details>
@@ -98,6 +98,8 @@ __Bild einer Karte einfügen!__
 </div>
 
 <div class="right">
+
+__Herausforderungen:__
 
 + Passanten, Radfahrerinnen, Tiere
 + Kinderwägen, Rollatoren, Rollstühle
@@ -117,6 +119,8 @@ __Bild einer Karte einfügen!__
 
 <div class="right">
 
+__Herausforderungen:__
+
 + Ampelanlagen
 + fehlende Einsehbarkeit von Situation wegen der geringen Bauhöhe
 + lokal schwierige Beleuchtungssituationen
@@ -128,8 +132,16 @@ __Bild einer Karte einfügen!__
 <details>
 <summary>**Rechtlicher Rahmen**</summary>
 
-+ Gesetz über das autonome Fahren 
-+ asdfsa
+__Herausforderungen:__
+
++ Gesetz zum autonomen Fahren (2021)
++ Autonome-Fahrzeuge-Genehmigungs-und-Betriebs-Verordnung (2022)
+
+> __§ 1 Straßenverkehrsgesetz (StVG)__
+>
+> (2) Als Kraftfahrzeuge im Sinne dieses Gesetzes gelten Landfahrzeuge, die durch Maschinenkraft bewegt werden, ohne an Bahngleise gebunden zu sein.
+>
+> (3) Keine Kraftfahrzeuge im Sinne dieses Gesetzes sind Landfahrzeuge, die durch Muskelkraft fortbewegt werden und mit einem elektromotorischen Hilfsantrieb mit einer Nenndauerleistung von höchstens 0,25 kW ausgestattet sind ...
 
 </details>
 
@@ -145,7 +157,7 @@ __Bild einer Karte einfügen!__
 
 Anmerkungen: 
 
-1. Die makroskopisiche Planung arbeitet auf attributierten Graphen, die mikroskopische auf Gridstrukturen.
+1. Die makroskopische Planung arbeitet auf attributierten Graphen, die mikroskopische auf Gridstrukturen.
 2. Beide Aspekte sind die Grundlage für die Einrichtung von "_Attributierten Roboter Korridoren_" notwendig.
 
 ***********************************************************
@@ -175,40 +187,63 @@ __Herausforderungen:__
 
 ### Herausforderung Datenlage 
 
-Die OSM Datenbank ist eine der wichtigsten Datenquellen für die Planung von autonomen Systemen. In Kombination mit Einwohnerstatistiken lassen sich Rückschlüsse auf die Abdeckung von autonomen Systemen ziehen.
+                    {{0-1}}
+***********************************************************
 
+Open Street Map kann die Anfragen zu Attributen der Fuß- und Radwege nur unzureichend beantworten.
 
-Isochrone Karte von Dresden 
+<!-- data-type="none" -->
+| Attribute / Tags | intercity | local | cycleway | footway | sidewalk | bicycle |
+| ---------------- | --------: | ----: | -------: | ------: | -------: | ------: |
+| `surface`        |       100 |    85 |       98 |      85 |       88 |      86 |
+| `width`          |         1 |     8 |       14 |       3 |        5 |       7 |
+| `smoothness`     |        80 |    51 |       79 |      35 |       48 |      49 |
+| `max_width`      |         0 |     0 |        0 |       0 |        0 |       0 |
+| `est_width`      |         0 |     0 |        0 |       0 |        0 |       0 |
 
+_Übersicht der hinterlegten Attribute für die Straßen und Wege der Stadt Dresden aus OSM (Feb. 2024)_
+
+***********************************************************
 
                     {{1-2}}
 ***********************************************************
 
+Das Projekt Ready for Smart City Robots zielt darauf ab diese Lücke zu füllen und aggregiert Daten aus 
 
-<!-- data-type="none" -->
-| Attribute / Tags | intercity | local | cycleway | footway | path | sidewalk | bicycle |
-| ---------------- | --------: | ----: | -------: | ------: | ---: | -------: | ------: |
-| `surface`        |       100 |    85 |       98 |      85 |   70 |       88 |      86 |
-| `width`          |         1 |     8 |       14 |       3 |    8 |        5 |       7 |
-| `smoothness`     |        80 |    51 |       79 |      35 |   20 |       48 |      49 |
-| `max_width`      |         0 |     0 |        0 |       0 |    0 |        0 |       0 |
-| `est_width`      |         0 |     0 |        0 |       0 |    0 |        0 |       0 |
++ Fahrradleihsystemen und 
++ anhand einer Mobilfunkapp.
 
-***********************************************************
+<div class="left">
 
-                    {{2-3}}
-***********************************************************
+![](./images/Fahrrad_und_roboter.jpeg "Abb.: Leihlastenfahrräder für die roboterspezifische Datenerhebung")
 
-Das Projekt Ready for Smart City Robots zielt darauf ab diese Lücke zu füllen und aggregiert Daten aus Fahrradleihsystemen und von Mobilfunkapps.
+</div>
 
-ToDo Grafik überlageung Schkeuditz
+<div class="right">
+
+![](./images/Szenario_Schkeuditz.jpeg "Abb.: Erste Abdeckungsanalyse der App-basierten Datenerhebung")
+
+</div>
 
 
 ***********************************************************
 
 ### Herausforderung Attribute 
 
-Hinweis auf die Wegbreiten von Lucas
+Identifikation der minimalen Wegbreiten für Fuß- und Radwege anhand eines multimodalen Datensets (Bachelorarbeit, Lukas Neuber, 2024)
+
+<div class="left">
+
+![](./images/weg_erkannt.png "Abb.: Situativ gültige Erfassung der Wegbreite")
+
+</div>
+
+<div class="right">
+
+![](./images/aufsteller.png "Abb.: Hindernisse auf dem Gehweg")
+
+</div>
+
 
 ## Mikroskopische Planung
 
@@ -220,7 +255,7 @@ __Kriterien:__
 
 1. Sicherheitsgefühl, Vorhersehbarkeit (Sichtlinien, kritische Pfade)
 2. Kontrollierbarkeit (Automatikmodus, manueller Modus)
-icherheitsgefühl, Vorhersehbarkeit (Sichtlinien, kritische Pfa
+
 </div>
 
 <div class="right">
@@ -229,17 +264,26 @@ __Herausforderungen:__
 
 + __Datenlage__ (Sichtachsen, Passantenaufkommen)
 + __Modellierung Verhaltens anderer Verkehrsteilnehmer__ (z. B. Fußgängerdynamik)
-+ __Kommunikation__ 
++ __Kommunikationsmöglichkeiten__ 
 
 </div>
 
 ### Herausforderung Sicherheitsgefühl
 
- ![](./images/Kritische_Pfade_in_Freiberg.jpg)
+Vergleich der Sichtlinienanalysen auf der Basis von OSM Daten und realweltlichen Messungen (Bachelorarbeit, Vincent Junge, 2024)
 
- ![](./images/Sichtlinien_in_freiberg.jpg)
+<div class="left">
 
-Bachelorarbeit: Vincent Junge
+![](./images/Kritische_Pfade_in_Freiberg.jpg "Abb.: Situativ gültige Erfassung der Wegbreite")
+
+</div>
+
+<div class="right">
+
+![](./images/Sichtlinien_in_freiberg.jpg "Abb.: Hindernisse auf dem Gehweg")
+
+</div>
+
 
 ### Herausforderung Verhaltensmodellierung
 
@@ -248,25 +292,39 @@ Bilder von den Experimenten in Freiberg
 
 ## Methodik
 
-Karte von Freiberg
+![](./images/Claudi_details.jpg "Abb.: Sensorische Konfiguration des Roboters")
+
+Datenlage:
+
++ 22 Fahrten im Jahresverlauf 2022/ 23 in Freiberg
++ wiederkehrender Rundkurs mit 2.5 km Länge
++ Abdeckung unterschiedlicher Kontexte (z. B. Wochenende, Feiertage, Veranstaltungen) und Situationen (Marktplatz, Fußgängerzone, schmale Gassen)
 
 ## Fazit und Resumee
 
 <div class="left">
 
-__Herausforderungen:__
+__Vision: Verlässliche Prognosen für die Bewegung von autonomen Systemen auf Fuß- und Gehwegen__
 
+![](./images/isochronen_Dresden.jpg "Abb.: Abdeckungsareal eines Roboters mit 15min Fahrzeit (3.6km/h) startend vom Rathaus Dresden (rot Fußwege, blau Fuß- und Radwege)")
 
 </div>
 
 <div class="right">
 
-!?[Robot_meets_barrier](./images/robot_meets_barrier.mp4)<!--
-autoplay="true"
-muted="true"
--->
+__Hürden auf dem Weg dahin:__
+
++ Datenlage, Datenlage, Datenlage, ...
++ abstrakte Akzeptanzkriterien
++ feingranulare Regularien
+
+... aber wir sind auf einem guten Weg!
+
+{{1-2}}
+!?[Robot_meets_barrier](./images/robot_meets_barrier.mp4)<!--autoplay="true" muted="true"-->
 
 </div>
+
 
 ## Referenzen
 
