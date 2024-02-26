@@ -129,7 +129,7 @@ __Bild einer Karte einfügen!__
 <summary>**Rechtlicher Rahmen**</summary>
 
 + Gesetz über das autonome Fahren 
-+ 
++ asdfsa
 
 </details>
 
@@ -143,13 +143,10 @@ __Bild einer Karte einfügen!__
 ![](./images/MakroskopischeSicht_Dresden.jpg "Abb.: Makroskopische Sicht auf Fuß- und Gehwege")
 ![](./images/MirkoskopischeSicht.jpg "Abb.: Mikroskopische Sicht auf konkrete Trajektorien")
 
-<!-- class="highlight" -->
-> __Projekt:__
-> [Ready for Smart City Robots](https://bmdv.bund.de/SharedDocs/DE/Artikel/DG/mfund-projekte/r4r.html), BMDV (2022 - 2025) - TU Bergakademie Freiberg, Otto-von-Guericke Universität Magdeburg, Hochschule Anhalt, Hochschule Merseburg, TINK GmbH, DigiPL GmbH, CyFace GmbH, PTV AG, Landkreis Nordsachsen
+Anmerkungen: 
 
-<!-- class="highlight" -->
-> __Projekt:__
-> [RoboTraces](https://bmdv.bund.de/SharedDocs/DE/Artikel/DG/mfund-projekte/robotraces.html), BMDV (2022 - 2023) - Hochschule Schmalkalden, TU Bergakademie Freiberg
+1. Die makroskopisiche Planung arbeitet auf attributierten Graphen, die mikroskopische auf Gridstrukturen.
+2. Beide Aspekte sind die Grundlage für die Einrichtung von "_Attributierten Roboter Korridoren_" notwendig.
 
 ***********************************************************
 
@@ -162,7 +159,7 @@ __Bild einer Karte einfügen!__
 __Kriterien:__ 
 
 1. Generelle Befahrbarkeit (z. B. Wegbreite, Bordsteinkanten, GNSS-Lokalisierungsgenauigkeit)
-2. Reduzierung des Konfliktpotenzials mit anderen Verkehrsteilnehmern
+2. Determinismus der Ankunftszeiten (z. B. Passantenaufkommen, Länge von Umwegen im Fall von Hindernissen)
 
 </div>
 
@@ -170,14 +167,23 @@ __Kriterien:__
 
 __Herausforderungen:__
 
-+ __Datenlage__ (z. B. OpenStreetMap, amtliche Geodaten)
-+ __Modellierung__ (z. B. Fußgängerdynamik, Hindernisverhalten)
++ __Streckendaten__ (z. B. OpenStreetMap, amtliche Geodaten)
++ __Attribute__ (z. B. Wegbreiten, Hindernisse, Passantenaufkommen)
++ __dynamische Daten__ (z. B. Veranstaltungen, Baustellen)
 
 </div>
 
 ### Herausforderung Datenlage 
 
-Die OSM Datenbank ist eine der wichtigsten Datenquellen für die Planung von autonomen Systemen. Sie ist jedoch nicht immer vollständig und aktuell.
+Die OSM Datenbank ist eine der wichtigsten Datenquellen für die Planung von autonomen Systemen. In Kombination mit Einwohnerstatistiken lassen sich Rückschlüsse auf die Abdeckung von autonomen Systemen ziehen.
+
+
+Isochrone Karte von Dresden 
+
+
+                    {{1-2}}
+***********************************************************
+
 
 <!-- data-type="none" -->
 | Attribute / Tags | intercity | local | cycleway | footway | path | sidewalk | bicycle |
@@ -188,34 +194,83 @@ Die OSM Datenbank ist eine der wichtigsten Datenquellen für die Planung von aut
 | `max_width`      |         0 |     0 |        0 |       0 |    0 |        0 |       0 |
 | `est_width`      |         0 |     0 |        0 |       0 |    0 |        0 |       0 |
 
+***********************************************************
+
+                    {{2-3}}
+***********************************************************
+
 Das Projekt Ready for Smart City Robots zielt darauf ab diese Lücke zu füllen und aggregiert Daten aus Fahrradleihsystemen und von Mobilfunkapps.
 
 ToDo Grafik überlageung Schkeuditz
 
 
+***********************************************************
 
+### Herausforderung Attribute 
 
-### Herausforderung Modellierung 
+Hinweis auf die Wegbreiten von Lucas
+
+## Mikroskopische Planung
+
+> __Zielstellung:__ Wo sollte der Roboter (wie) auf den Wegen fahren? 
+
+<div class="left">
+
+__Kriterien:__ 
+
+1. Sicherheitsgefühl, Vorhersehbarkeit (Sichtlinien, kritische Pfade)
+2. Kontrollierbarkeit (Automatikmodus, manueller Modus)
+icherheitsgefühl, Vorhersehbarkeit (Sichtlinien, kritische Pfa
+</div>
+
+<div class="right">
+
+__Herausforderungen:__
+
++ __Datenlage__ (Sichtachsen, Passantenaufkommen)
++ __Modellierung Verhaltens anderer Verkehrsteilnehmer__ (z. B. Fußgängerdynamik)
++ __Kommunikation__ 
+
+</div>
+
+### Herausforderung Sicherheitsgefühl
+
  ![](./images/Kritische_Pfade_in_Freiberg.jpg)
 
  ![](./images/Sichtlinien_in_freiberg.jpg)
 
+Bachelorarbeit: Vincent Junge
 
-## Mikroskopische Planung
+### Herausforderung Verhaltensmodellierung
 
-> __Zielstellung:__ Wo sollte der Roboter (wie) auf den Wegen fahren?
+Bilder von den Experimenten in Freiberg
 
-Kriterium: 
 
-1. Determinismus der Ankunftszeiten (z. B. Passantenaufkommen, Länge von Umwegen im Fall von Hindernissen)
-2. Sicherheit (z. B. Sichtbarkeit, Abstand zu Passanten)
+## Methodik
 
-### Untersuchungs- methodik
+Karte von Freiberg
 
 ## Fazit und Resumee
 
+<div class="left">
+
+__Herausforderungen:__
+
+
+</div>
+
+<div class="right">
+
+!?[Robot_meets_barrier](./images/robot_meets_barrier.mp4)<!--
+autoplay="true"
+muted="true"
+-->
+
+</div>
 
 ## Referenzen
+
+Publikationen:
 
 <!-- class="reference" -->
 > M. Plank, C. Lemardelé, T. Assmann, S. Zug, _"Ready for robots? Assessment of autonomous delivery robot operative accessibility in German cities,"_, Journal of Urban Mobility, Volume 2, 2022, [doi.org/10.1016/j.urbmob.2022.100036](https://www.sciencedirect.com/science/article/pii/S2667091722000243).
@@ -226,3 +281,13 @@ Kriterium:
 
 <!-- class="reference" -->
 > M. Plank, G. Jäger, S. Zug, _"Delivery robots are not just small autonomous cars! How to close the gap in environmental data for planning their operation?"_, 2023 IEEE International Symposium on Robotic and Sensors Environments (ROSE), Tokyo, Japan, 2023, [10.1109/ROSE60297.2023.10410711](https://ieeexplore.ieee.org/document/10410711).
+
+Relevante Projekte:
+
+<!-- class="highlight" -->
+> __Projekt:__
+> [RoboTraces](https://bmdv.bund.de/SharedDocs/DE/Artikel/DG/mfund-projekte/robotraces.html), BMDV (2022 - 2023) - Hochschule Schmalkalden, TU Bergakademie Freiberg
+
+<!-- class="highlight" -->
+> __Projekt:__
+> [Ready for Smart City Robots](https://bmdv.bund.de/SharedDocs/DE/Artikel/DG/mfund-projekte/r4r.html), BMDV (2022 - 2025) - TU Bergakademie Freiberg, Otto-von-Guericke Universität Magdeburg, Hochschule Anhalt, Hochschule Merseburg, TINK GmbH, DigiPL GmbH, CyFace GmbH, PTV AG, Landkreis Nordsachsen
