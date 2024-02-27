@@ -3,7 +3,7 @@ author:   Sebastian Zug; André Dietrich
 
 email:    sebastian.zug@informatik.tu-freiberg.de
 
-version:  1.0.0
+version:  1.0.1
 
 language: en
 
@@ -38,7 +38,7 @@ TU Bergakademie Freiberg
 
 ### Kongress für Geoinformatik und Geodäsie
 
-### Virtuelle Welten - Dresden, 27.02.2024
+### Digitale Welten - Dresden, 27.02.2024
 
 </div>
 
