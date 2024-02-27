@@ -3,7 +3,7 @@ author:   Sebastian Zug; André Dietrich
 
 email:    sebastian.zug@informatik.tu-freiberg.de
 
-version:  0.0.2
+version:  1.0.0
 
 language: en
 
@@ -221,7 +221,7 @@ Das Projekt Ready for Smart City Robots zielt darauf ab diese Lücke zu füllen 
 
 <div class="right">
 
-![](./images/Szenario_Schkeuditz.jpeg "Abb.: Erste Abdeckungsanalyse der App-basierten Datenerhebung")
+![](./images/Szenario_Schkeuditz.jpeg "Abb.: Erste Abdeckungsanalyse der App-basierten Datenerhebung am Versuchsstandort Schkeuditz")
 
 </div>
 
@@ -230,7 +230,9 @@ Das Projekt Ready for Smart City Robots zielt darauf ab diese Lücke zu füllen 
 
 ### Herausforderung Attribute 
 
-Identifikation der minimalen Wegbreiten für Fuß- und Radwege anhand eines multimodalen Datensets (Bachelorarbeit, Lukas Neuber, 2024)
+Identifikation der minimalen Wegbreiten für Fuß- und Radwege anhand eines multimodalen Datensets 
+
+(Bachelorarbeit, Lukas Neuber, 2024)
 
 <div class="left">
 
@@ -270,7 +272,9 @@ __Herausforderungen:__
 
 ### Herausforderung Sicherheitsgefühl
 
-Vergleich der Sichtlinienanalysen auf der Basis von OSM Daten und realweltlichen Messungen (Bachelorarbeit, Vincent Junge, 2024)
+Vergleich der Sichtlinienanalysen auf der Basis von OSM Daten und realweltlichen Messungen 
+
+(Bachelorarbeit, Vincent Junge, 2024)
 
 <div class="left">
 
@@ -285,14 +289,22 @@ Vergleich der Sichtlinienanalysen auf der Basis von OSM Daten und realweltlichen
 </div>
 
 
-### Herausforderung Verhaltensmodellierung
+### Herausforderung Mensch
 
-Bilder von den Experimenten in Freiberg
+Wie verhalten sich die Menschen in der Umgebung des Roboters?
+
+{{0-1}}
+![](./images/trau_dich.jpg "Abb.: Histogramm der Abstände von Passanten zum Roboter")
+
+{{1-2}}
+![](./images/Interaktions_schemas_HMI.jpg "Abb.: Beispielhafte Trajektorien von Personen auf der Burgstraße in Freiberg")
 
 
 ## Methodik
 
-![](./images/Claudi_details.jpg "Abb.: Sensorische Konfiguration des Roboters")
+>Auf welchen Daten basieren die Arbeiten?
+
+![](./images/Claudi_details.jpg "Abb.: Sensorische Konfiguration des Roboters")<!-- width="70%" -->
 
 Datenlage:
 
