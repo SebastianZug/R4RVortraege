@@ -1,3 +1,3 @@
 # Vorträge Ready-For-Robots Projekt
 
-+ Virtuelle Welten, Dresden, 2024
++ Digitale Welten, Dresden, 2024
