@@ -42,8 +42,18 @@ TU Bergakademie Freiberg
 
 </div>
 
+  --{{0}}--
+Dieser Vortrag gibt einen Überblick über die Herausforderungen und Chancen der Planung von autonomen Systemen, die auf Fuß- und Gehwegen operieren. Er fasst die in den Projekten "Ready for Smart City Robots" und "RoboTraces" mit verschiedenen Forschungspartnern entwickelten Konzepte zusammen.
+
 
 ## Chancen & Herausforderungen 
+
+  --{{0}}--
+Kompakte, nicht-automotive autonome Roboter lassen sich intuitiv für eine Vielzahl von Anwendungen nutzen. Der Fokus der gesellschaftlichen Diskussion liegt aktuell zwar auf  klassischen Lieferdiensten in urbanen Räumen. Die automatisierten Plattformen eröffnen aber auch eine Vielzahl von weiteren Anwendungsfeldern und Nutzungsmodelle. 
+
+  --{{1}}--
+Dabei können die Konzepte des Autonomen Fahrens von Straßenfahrzeugen aber nur bedingt auf die Fuß- und Radwege übertragen werden. Zum einen fehlt es schlicht und ergreifend an einem gemeinsamen Verständnis zum Betrieb der Roboter: Welche Größe und Gewicht dürfen sie haben? Welche Geschwindigkeiten sind zulässig? Welche Sicherheitsstandards müssen eingehalten werden? Ein autonomes Automobil kopiert einen menschlichen Fahrer, ein autonomer Roboter ist dagegen ein neuer Akteur im urbanen Raum, für den die spezifischen Regeln erst noch definiert werden müssen.
+
 
                           {{0-2}}
 ***********************************************************
@@ -62,10 +72,13 @@ ABER: _"... sie können aber nur eine Ergänzung zu bestehenden Prozessen und k�
 
 ***********************************************************
 
+  --{{2}}--
+Allerdings müssen auch ganz pragmatische Gründe betrachtet werden, die Fuß- und Radwege von den Straßen unterscheiden. Die Heterogenität des Operationsgebietes, die Dynamik der Umgebung, die nicht-maschinengerechten Infrastrukturen und Konfigurationen und der rechtliche Rahmen sind technische Herausforderungen, die es zu meistern gilt.
+
                           {{2-3}}
 ***********************************************************
 
-> __Warum ist das so?__
+> __Lieferroboter sind keine kleinen Autos! Warum ist das so?__
 
 <details>
 <summary>**Heterogenität der Umgebung**</summary>
@@ -147,6 +160,9 @@ __Herausforderungen:__
 
 ***********************************************************
 
+  --{{2}}--
+Vor dem Hintergrund der Einschränkungen beim Betrieb - zu geringen Gehwegbreiten, einem ggf. hohen Passantenaufkommen oder einer schwer einsehbaren Wegekreuzung - ist die multimodale Planung des Einsatzes von autonomen Systemen die Schlüsselaufgabe für deren Einführung. Um zulässige Trajektorien zu identifizieren, müssen sowohl die Nutzbarkeit von einzelnen Streckensegmenten (_Radweg in der XYZ-Straße_) evaluiert als auch die konkrete Pfad unter sozialen und technischen Gesichtspunkten (_Fahrt entlang der Hauswand_) festgelegt werden. Im folgenden wird dies als makroskopische und mikroskopische Planung bezeichnet. 
+
 {{3-4}}
 ***********************************************************
 
@@ -163,6 +179,9 @@ Anmerkungen:
 ***********************************************************
 
 ## Makroskopische Planung
+
+  --{{0}}--
+Bemerkenswert bei der Beantwortung der Frage ist die Tatsache, dass die Befahrbarkeit nicht nur von den Eigenschaften der Umgebung abhängt, sondern auch von der Konfiguration des Roboters selbst. Dessen Größe, die Fähigkeit Hindernisse zu überwinden und die Genauigkeit der individuellen Lokalisierungstechnik sind Faktoren, die eine roboterspezifische Untersuchung erforderlich machen. Wie können die Vereinbarkeit von Roboterkonfiguration und Umgebung in einer Metrik abgebildet werden? Neben der binären _ja/nein_ Entscheidung für die Befahrbarkeit, kann auch die Verlässlichkeit beschrieben werden. Im logistischen Kontext wäre das die Planbarkeit der Fahrtdauer und damit deren Determinismus. 
 
 > __Zielstellung:__ Auf welchen Wegen kann der Roboter überhaupt fahren?
 
@@ -187,6 +206,9 @@ __Herausforderungen:__
 
 ### Herausforderung Datenlage 
 
+  --{{0}}--
+Die nachfolgende Tabelle illustriert die unzureichende Datenlage für die Planung von autonomen Systemen auf Fuß- und Radwegen am Beispiel von Open Street Map (OSM). Die Tabelle zeigt, dass die roboterrelevanten Attributen der Fuß- und Radwege, wie die Breite oder die Oberflächenbeschaffenheit bislang nur unvollständig hinterlegt sind. Zudem existieren aktuell keine übergreifenden Karten, die Fuß- und Radwege als eigenständige Infrastruktur in großem Maßstab abbilden.
+
                     {{0-1}}
 ***********************************************************
 
@@ -207,6 +229,9 @@ _Übersicht der hinterlegten Attribute für die Straßen und Wege der Stadt Dres
 
                     {{1-2}}
 ***********************************************************
+
+  --{{0}}--
+Das Projekt "Ready for Smart City Robots" nutzt die Daten von Radfahrerinnen und Radfahrern, um diese Lücke zu schließen. Dabei werden zwei Konzepte verfolgt - ein community-basierter Ansatz, bei dem mit einer Mobiltelefonapp Daten zur aktuellen Wegbeschaffenheit gesammelt werden und mit den Nutzerinnen und Nutzer von Fahrradleihsystemen, wobei den Leihrädern eine hochintegrierte Sensorbox beigefügt wurde. Das Vorhaben stellt die Vor- und Nachteile der beiden Ansätze gegenüber und wertet deren Datenqualität und -quantität aus.
 
 Das Projekt Ready for Smart City Robots zielt darauf ab diese Lücke zu füllen und aggregiert Daten aus 
 
@@ -230,9 +255,10 @@ Das Projekt Ready for Smart City Robots zielt darauf ab diese Lücke zu füllen 
 
 ### Herausforderung Attribute 
 
-Identifikation der minimalen Wegbreiten für Fuß- und Radwege anhand eines multimodalen Datensets 
+> ... am Beispiel der Gewegsbreiten
 
-(Bachelorarbeit, Lukas Neuber, 2024)
+  --{{0}}--
+Die nachfolgenden Grafiken illustrieren die Komplexität der dabei umzusetzenden Bildverarbeitung. Die linke Grafik zeigt das Ergebnis der Bewertung in einer einfachen Situation, der Fußweg grenzt sich deutlich von der Straße ab, die Wegbreite ist gut erkennbar. Die rechte Grafik zeigt dagegen eine Situation, in der die Wegbreite nur schwer zu bestimmen ist. Die Herausforderung besteht darin, die Wegbreite in einer Vielzahl von Situationen zuverlässig automatisiert zu bestimmen.
 
 <div class="left">
 
@@ -246,8 +272,14 @@ Identifikation der minimalen Wegbreiten für Fuß- und Radwege anhand eines mult
 
 </div>
 
+-----
+
+_Quelle: Identifikation der minimalen Wegbreiten für Fuß- und Radwege anhand eines multimodalen Datensets (Bachelorarbeit, Lukas Neuber, 2024)_
 
 ## Mikroskopische Planung
+
+  --{{0}}--
+Die mikroskopische Planung untersucht nun, die konkrete Trajektorie des Roboters auf den Wegen. Dies schließt die Wahl der Fahrspur, die Geschwindigkeit und die Verhaltensregeln ein. Die Herausforderung besteht darin, die Sicherheit und Vorhersehbarkeit des Roboters zu gewährleisten.
 
 > __Zielstellung:__ Wo sollte der Roboter (wie) auf den Wegen fahren? 
 
@@ -272,10 +304,10 @@ __Herausforderungen:__
 
 ### Herausforderung Sicherheitsgefühl
 
-Vergleich der Sichtlinienanalysen auf der Basis von OSM Daten und realweltlichen Messungen 
+  --{{0}}--
+Ein Aspekt einer defensiven Trajektorienplanung ist die Prüfung von Sichtlinien. Aus welcher Perspektive kann der Roboter aus seiner Umgebung überhaupt wahrgenommen werden? Diese Planung sollte im besten Fall anhand von Kartendaten vorgenommen werden, so dass eine aufwändige Erfassung vor Ort nicht notwendig ist. Die nachfolgende Grafik zeigt die Ergebnisse einer solchen Analyse auf der Basis von Open Street Map Daten, die nun mit realweltlichen Messungen verglichen werden. 
 
-(Bachelorarbeit, Vincent Junge, 2024)
-
+<section>
 <div class="left">
 
 ![](./images/Kritische_Pfade_in_Freiberg.jpg "Abb.: Situativ gültige Erfassung der Wegbreite")
@@ -287,9 +319,14 @@ Vergleich der Sichtlinienanalysen auf der Basis von OSM Daten und realweltlichen
 ![](./images/Sichtlinien_in_freiberg.jpg "Abb.: Hindernisse auf dem Gehweg")
 
 </div>
+</section>
 
+_Vergleich der Sichtlinienanalysen auf der Basis von OSM Daten und realweltlichen Messungen (Bachelorarbeit, Vincent Junge, 2024)_
 
 ### Herausforderung Mensch
+
+  --{{0}}--
+Für die Interaktion von Robotern und Menschen exisiert eine Vielzahl von Laboruntersuchungen, es fehlen aber große Studien, die eine realweltliches Verhalten abbilden. Die nachfolgenden Grafiken zeigen die erste Ergebnisse einer solchen Studie, die im Rahmen des Projektes RoboTraces in Freiberg durchgeführt wurde. Die Grafik links zeigt die Verteilung der Abstände von Passanten zum Roboter. Die Grafik rechts zeigt beispielhafte Trajektorien von Personen auf der Burgstraße in Freiberg. Das Ziel der Untersuchung ist es, allgemeine kontextbasierte Verhaltensregeln zu identifizieren, die in die Planung der Trajektorien einfließen können.
 
 Wie verhalten sich die Menschen in der Umgebung des Roboters?
 
@@ -314,6 +351,9 @@ Datenlage:
 
 ## Fazit und Resumee
 
+  --{{0}}--
+Um einen "Wildwuchs" bei der Etablierung von Roboteranwendungen zu vermeiden, ist eine klare und transparente Planung anhand entsprechender behördlicher Regularien notwendig. Dies setzt aber voraus, dass die Planungskonzepte und Kriterien für autonome Systeme auf Fuß- und Gehwegen verlässlich und nachvollziehbar sind. Die Herausforderungen liegen dabei in der Datenlage, der Abstraktion der Akzeptanzkriterien und der feingranularen Regularien. Gleichzeitig sind die Kommunen in diesen Entwicklungsprozess einzubinden, um entsprechend der lokalen Besonderheiten diese Festlegungen zu treffen.
+
 <div class="left">
 
 __Vision: Verlässliche Prognosen für die Bewegung von autonomen Systemen auf Fuß- und Gehwegen__
@@ -328,12 +368,12 @@ __Hürden auf dem Weg dahin:__
 
 + Datenlage, Datenlage, Datenlage, ...
 + abstrakte Akzeptanzkriterien
-+ feingranulare Regularien
++ feingranulare kommunale Regularien
 
 ... aber wir sind auf einem guten Weg!
 
 {{1-2}}
-!?[Robot_meets_barrier](./images/robot_meets_barrier.mp4)<!--autoplay="true" muted="true"-->
+!?[Robot_meets_barrier](./images/robot_meets_barrier.mp4 "In Freiberg ist auch schon die Infrastruktur _Ready for Robots_")<!--autoplay="true" muted="true"-->
 
 </div>
 
