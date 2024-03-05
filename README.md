@@ -4,7 +4,7 @@
 
 > __Sind unsere Städte bereit für Roboter? Konzepte für die Planung von autonomen Systemen auf Fuß und Gehwegen__
 > 
-> [Interaktive Vortragsmaterialien](https://liascript.github.io/course/?https://raw.githubusercontent.com/SebastianZug/R4RVortraege/main/2024_DigitaleWelten/presentation.md#1)
+> [> Interaktive Vortragsmaterialien](https://liascript.github.io/course/?https://raw.githubusercontent.com/SebastianZug/R4RVortraege/main/2024_DigitaleWelten/presentation.md#1)
 > 
 > _Der Vortrag systematisiert ausgehend von laufenden Forschungsprojekten die Herausforderungen bei der Planung von Robotersystemen, die auf Fuß- und Gehwegen operieren. Die Darstellung identifiziert Unterschiede zu autonomen automotiven Anwendung und skizziert Lösungsansätze._
 

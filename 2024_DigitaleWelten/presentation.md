@@ -57,9 +57,8 @@ Dieser Vortrag gibt einen Überblick über die Herausforderungen und Chancen der
     --{{0}}--
 Kompakte, nicht-automotive autonome Roboter lassen sich intuitiv für eine Vielzahl von Anwendungen nutzen. Der Fokus der gesellschaftlichen Diskussion liegt aktuell zwar auf  klassischen Lieferdiensten in urbanen Räumen. Die automatisierten Plattformen eröffnen aber auch eine Vielzahl von weiteren Anwendungsfeldern und Nutzungsmodelle. 
 
-    --{{1}}--
-Dabei können die Konzepte des Autonomen Fahrens von Straßenfahrzeugen aber nur bedingt auf die Fuß- und Radwege übertragen werden. Zum einen fehlt es schlicht und ergreifend an einem gemeinsamen Verständnis zum Betrieb der Roboter: Welche Größe und Gewicht dürfen sie haben? Welche Geschwindigkeiten sind zulässig? Welche Sicherheitsstandards müssen eingehalten werden? Ein autonomes Automobil kopiert einen menschlichen Fahrer, ein autonomer Roboter ist dagegen ein neuer Akteur im urbanen Raum, für den die spezifischen Regeln erst noch definiert werden müssen.
-
+    --{{2}}--
+Welche Aspekte beschränken aber den Einsatz von kleineren Robotern auf Fuß- und Radwegen, so dass sie nicht als einfach integrierbare Technologie für unsere Städte betrachtet werden können?
 
                           {{0-2}}
 ***********************************************************
@@ -73,18 +72,30 @@ Dabei können die Konzepte des Autonomen Fahrens von Straßenfahrzeugen aber nur
                           {{1-2}}
 ***********************************************************
 
-ABER: _"... sie können aber nur eine Ergänzung zu bestehenden Prozessen und können keine vollständige Substitution darstellen."_ (Interview KEP Dienstleister)
-
+__ABER:__ _"... sie können aber nur eine Ergänzung zu bestehenden Prozessen und können keine vollständige Substitution darstellen."_ (Interview KEP Dienstleister)
 
 ***********************************************************
 
-    --{{2}}--
-Allerdings müssen auch ganz pragmatische Gründe betrachtet werden, die Fuß- und Radwege von den Straßen unterscheiden. Die Heterogenität des Operationsgebietes, die Dynamik der Umgebung, die nicht-maschinengerechten Infrastrukturen und Konfigurationen und der rechtliche Rahmen sind technische Herausforderungen, die es zu meistern gilt.
-
-
 ### Herausforderungen
 
-> __Lieferroboter sind keine kleinen Autos! Warum ist das so?__
+    --{{0}}--
+Warum können wir die Visionen des automotiven Fahrens nicht einfach übertragen? 
+Ein autonomes Automobil kopiert einen menschlichen Fahrer, ein autonomer Roboter ist dagegen ein neuer Akteur im urbanen Raum, für den die spezifischen Regeln erst noch definiert werden müssen. Dabei bewegt sich das Automobil in einer entsprechend strukturierten Umgebung.
+
+    --{{1}}--
+Anders als Straßen weisen Fuß- und Gehwege eine Vielzahl von Parametern auf, die sich innerhalb eines kurzen Abschnitts stark unterscheiden können. Die Herausforderung besteht darin, die Befahrbarkeit und die Sicherheit des Roboters auf diesen Wegen zu gewährleisten.
+
+    --{{2}}--
+Die Umgebung selbst ist zudem hochdynamisch - permanent treten neue Hindernisse auf bzw. werden verlagert. So ändert sich die zur Verfügung stehende Wegbreite durch aufgestellte Tische und Stühle, durch Baustellen oder durch abgestellte Kinderwägen. Das Bild zeigt eine energisch geöffnete Autotür, die temporär dem Roboter den Weg versperrt.
+
+    --{{3}}-- 
+Ampelanlagen, Schilder oder Straßenbeschriftungen sind mit Blick auf die geringe Bauhöhe des Roboters nicht einsehbar. Sie werden häufig durch Hindernisse verdeckt. Im Beispiel wäre eine robuste visuelle Erfassung der Ampelsituation außerordentlich herausfordernd. Gleichzeitig könnte der Roboter nicht beurteilen, ob auf der anderen Seite der Fußgängerampel entgegenkommende Passantinnen und Passanten warten.
+
+    --{{4}}--
+Für den Betrieb des Roboters fehlt es (noch) an einer finalen rechtlichen Einordnung und entsprechenden Regularien zu dessen Design und den grundlegenden Parametern: Welche Größe und Gewicht dürfen sie haben? Welche Geschwindigkeiten sind zulässig? Welche Sicherheitsstandards müssen eingehalten werden? 
+Die entsprechenden Regularien sind in Deutschland erst in den letzten Jahren entstanden und werden aktuell weiterentwickelt.
+
+> __Roboter auf Fuß- und Gehwegen sind keine kleinen Autos und brauchen neue Konzepte! Warum ist das so?__
 
 **1. Heterogenität der Umgebung**
 
@@ -105,7 +116,9 @@ __Herausforderungen:__
 
 + Wegbreiten und -untergründe
 + variierende Bordsteinkanten
-+ Hindernisse wie Treppen, Poller, Cafe-Tische etc.
++ Hindernisse wie Treppen,
+                          {{0-4}}
+ Poller, Cafe-Tische etc.
 + Anstiege und Gefälle
 
 </div>
@@ -250,13 +263,13 @@ Zudem existieren aktuell keine übergreifenden Karten, die Fuß- und Radwege als
 Open Street Map kann die Anfragen zu Attributen - Wegbreite, Oberflächenstruktur, usw. - der Fuß- und Radwege nur unzureichend beantworten. Die Tabelle zeigt die prozentualen Anteile der hinterlegten Attribute für die Stadt Dresden.
 
 <!-- data-type="none" -->
-| Attribute / Tags | `intercity` | `local` | `cycleway` | `footway` | `sidewalk` | `bicycle` |
-| ---------------- | ----------: | ------: | ---------: | --------: | ---------: | --------: |
-| `<surface>`      |         100 |      85 |         98 |        85 |         88 |        86 |
-| `<width>`        |           1 |       8 |         14 |         3 |          5 |         7 |
-| `<smoothness>`   |          80 |      51 |         79 |        35 |         48 |        49 |
-| `<max_width>`    |           0 |       0 |          0 |         0 |          0 |         0 |
-| `<est_width>`    |           0 |       0 |          0 |         0 |          0 |         0 |
+| Attribute / Tags | `local` | `cycleway` | `footway` | `sidewalk` | `bicycle` |
+| ---------------- | ------: | ---------: | --------: | ---------: | --------: |
+| `<surface>`      |      85 |         98 |        85 |         88 |        86 |
+| `<width>`        |       8 |         14 |         3 |          5 |         7 |
+| `<smoothness>`   |      51 |         79 |        35 |         48 |        49 |
+| `<max_width>`    |       0 |          0 |         0 |          0 |         0 |
+| `<est_width>`    |       0 |          0 |         0 |          0 |         0 |
 
 _Übersicht der Anteile unterschiedlicher Weg- und Straßentypen mit Blick auf die hinterlegten Attribute in Dresden aus dem OSM-Datensatz (Feb. 2024)_
 
@@ -288,7 +301,7 @@ Das Projekt Ready for Smart City Robots zielt darauf ab diese Lücke zu füllen 
 > ... am Beispiel der Gewegsbreiten
 
     --{{0}}--
-Die nachfolgenden Grafiken illustrieren die Komplexität der dabei umzusetzenden Bildverarbeitung. Die linke Grafik zeigt das Ergebnis der Bewertung in einer einfachen Situation, der Fußweg grenzt sich deutlich von der Straße ab, die Wegbreite ist gut erkennbar. Die rechte Grafik zeigt dagegen eine Situation, in der die Wegbreite nur schwer zu bestimmen ist. Die Herausforderung besteht darin, die Wegbreite in einer Vielzahl von Situationen zuverlässig automatisiert zu bestimmen.
+Die Grafiken illustrieren die Komplexität der dabei umzusetzenden Bildverarbeitung. Die linke Grafik zeigt das Ergebnis der Bewertung in einer einfachen Situation, der Fußweg grenzt sich deutlich von der Straße ab, die Wegbreite ist gut erkennbar. Die rechte Grafik zeigt dagegen eine Situation, in der die Wegbreite nur schwer zu bestimmen ist. Die Herausforderung besteht darin, die Wegbreite in einer Vielzahl von Situationen zuverlässig automatisiert zu bestimmen. Im Vorhaben werden dafür verschiedene Sensortypen und Verarbeitungspipelines kombiniert. 
 
 <section class="container">
 
@@ -362,7 +375,7 @@ Für die Interaktion von Robotern und Menschen exisiert eine Vielzahl von Laboru
 > Wie verhalten sich die Menschen in der Umgebung des Roboters in tatsächlichen Situationen?
 
     --{{0}}--
-Die nachfolgenden Grafiken zeigen die erste Ergebnisse einer solchen Studie, die im Rahmen des Projektes RoboTraces in Freiberg durchgeführt wurde. Die Grafik links zeigt die Verteilung der Abstände von Passanten zum Roboter. Offenbar halten die Menschen vom Roboter einen relativ großen Sicherheitsabstand, wenn er sich bewegt. Dies Information muss in die Planung der notwendigen Breite einbezogen werden.
+Die Grafiken zeigen die erste Ergebnisse einer solchen Studie, die im Rahmen des Projektes RoboTraces in Freiberg durchgeführt wurde. Das Histogramm zeigt die Verteilung der Abstände von Passanten zum Roboter. Offenbar halten die Menschen vom Roboter einen größeren Mindestsicherheitsabstand, wenn er sich bewegt. Dies Information muss in die Planung der notwendigen Breite einbezogen werden.
 
      {{0-1}}
 ![](./images/trau_dich.jpg "Abb.: Histogramm der Abstände von Passanten zum Roboter")
