@@ -1,4 +1,4 @@
-# Vorträge Ready-For-Robots Projekt
+# Ready-For-Smart-City-Robots Projekt
 
 ## Vortrag Digitale Welten, Dresden, 2024
 
