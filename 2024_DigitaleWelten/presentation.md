@@ -5,9 +5,9 @@ email:    sebastian.zug@informatik.tu-freiberg.de
 
 version:  1.0.3
 
-language: en
+language: de
 
-narrator: UK English Female
+narrator: Deutsch Female
 
 icon:     https://media.aubi-plus.com/institution/thumbnail/3f3de48-technische-universitaet-bergakademie-freiberg-logo.jpg
 
