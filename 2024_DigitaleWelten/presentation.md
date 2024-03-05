@@ -3,7 +3,7 @@ author:   Sebastian Zug; André Dietrich
 
 email:    sebastian.zug@informatik.tu-freiberg.de
 
-version:  1.0.2
+version:  1.0.3
 
 language: en
 
@@ -12,6 +12,11 @@ narrator: UK English Female
 icon:     https://media.aubi-plus.com/institution/thumbnail/3f3de48-technische-universitaet-bergakademie-freiberg-logo.jpg
 
 link:     style.css
+
+@onload
+  LIA.settings.sound = false;
+  LIA.settings.mode = "Slides";
+@end
 
 -->
 
@@ -104,7 +109,7 @@ __Herausforderungen:__
 + Anstiege und Gefälle
 
 </div>
-
+</section>
 
 ***********************************************************
 
@@ -131,6 +136,7 @@ __Herausforderungen:__
 
 </div>
 
+</section>
 
 ***********************************************************
 
@@ -157,28 +163,30 @@ __Herausforderungen:__
 
 </div>
 
+</section>
+
 ***********************************************************
 
 **4. Rechtlicher Rahmen**
 
-                          {{5-6}}
+                          {{4-5}}
 ***********************************************************
 
 <section class="container">
 <div class="left">
+
 __Herausforderungen:__
 
 + Gesetz zum autonomen Fahren (2021)
 + Autonome-Fahrzeuge-Genehmigungs-und-Betriebs-Verordnung (2022)
 </div>
 
-
 <!-- class="right" -->
 > __§ 1 Straßenverkehrsgesetz (StVG)__
 >
 > (2) Als Kraftfahrzeuge im Sinne dieses Gesetzes gelten Landfahrzeuge, die durch Maschinenkraft bewegt werden, ohne an Bahngleise gebunden zu sein.
->
-> (3) Keine Kraftfahrzeuge im Sinne dieses Gesetzes sind Landfahrzeuge, die durch Muskelkraft fortbewegt werden und mit einem elektromotorischen Hilfsantrieb mit einer Nenndauerleistung von höchstens 0,25 kW ausgestattet sind ...
+
+</section>
 
 ***********************************************************
 
@@ -188,7 +196,6 @@ __Herausforderungen:__
 Vor dem Hintergrund der Einschränkungen beim Betrieb - zu geringen Gehwegbreiten, einem ggf. hohen Passantenaufkommen oder einer schwer einsehbaren Wegekreuzung - ist die multimodale Planung des Einsatzes von autonomen Systemen die Schlüsselaufgabe für deren Einführung. Um zulässige Trajektorien zu identifizieren, müssen sowohl die Nutzbarkeit von einzelnen Streckensegmenten (_Radweg in der XYZ-Straße_) evaluiert als auch die konkrete Pfad unter sozialen und technischen Gesichtspunkten (_Fahrt entlang der Hauswand_) festgelegt werden. Im folgenden wird dies als makroskopische und mikroskopische Planung bezeichnet. 
 
 > __Ergebnis__: Die _multimodale_ Planung des Einsatzes von autonomen Systemen ist die Schlüsselaufgabe für deren Einführung.
-
 ![](./images/MakroskopischeSicht_Dresden.jpg "Abb.: Makroskopische Sicht auf Fuß- und Gehwege")
 ![](./images/MirkoskopischeSicht.jpg "Abb.: Mikroskopische Sicht auf konkrete Trajektorien")
 
@@ -197,16 +204,16 @@ Anmerkungen:
 1. Die makroskopische Planung arbeitet auf attributierten Graphen, die mikroskopische auf Gridstrukturen.
 2. Beide Aspekte sind die Grundlage für die Einrichtung von "_Attributierten Roboter Korridoren_" notwendig.
 
-
-
 ## Makroskopische Planung
 
     --{{0}}--
-Bemerkenswert bei der Beantwortung der Frage ist die Tatsache, dass die Befahrbarkeit nicht nur von den Eigenschaften der Umgebung abhängt, sondern auch von der Konfiguration des Roboters selbst.
+Bemerkenswert bei der Beantwortung der Frage ist die Tatsache, dass die Befahrbarkeit nicht nur von den Eigenschaften der Umgebung abhängt, sondern auch von der Konfiguration des Roboters selbst. 
 Dessen Größe, die Fähigkeit Hindernisse zu überwinden und die Genauigkeit der individuellen Lokalisierungstechnik sind Faktoren, die eine roboterspezifische Untersuchung erforderlich machen.
 Wie können die Vereinbarkeit von Roboterkonfiguration und Umgebung in einer Metrik abgebildet werden? Neben der binären _ja/nein_ Entscheidung für die Befahrbarkeit, kann auch die Verlässlichkeit beschrieben werden. Im logistischen Kontext wäre das die Planbarkeit der Fahrtdauer und damit deren Determinismus.
 
 > __Zielstellung:__ Auf welchen Wegen kann der Roboter überhaupt fahren?
+
+<section class="container">
 
 <div class="left">
 
@@ -217,6 +224,7 @@ __Kriterien:__
 
 </div>
 
+
 <div class="right">
 
 __Herausforderungen:__
@@ -226,6 +234,8 @@ __Herausforderungen:__
 + __dynamische Daten__ (z. B. Veranstaltungen, Baustellen)
 
 </div>
+
+</section>
 
 ### Herausforderung Datenlage
 
@@ -277,7 +287,7 @@ Das Projekt Ready for Smart City Robots zielt darauf ab diese Lücke zu füllen 
 
 > ... am Beispiel der Gewegsbreiten
 
-  --{{0}}--
+    --{{0}}--
 Die nachfolgenden Grafiken illustrieren die Komplexität der dabei umzusetzenden Bildverarbeitung. Die linke Grafik zeigt das Ergebnis der Bewertung in einer einfachen Situation, der Fußweg grenzt sich deutlich von der Straße ab, die Wegbreite ist gut erkennbar. Die rechte Grafik zeigt dagegen eine Situation, in der die Wegbreite nur schwer zu bestimmen ist. Die Herausforderung besteht darin, die Wegbreite in einer Vielzahl von Situationen zuverlässig automatisiert zu bestimmen.
 
 <section class="container">
@@ -327,7 +337,7 @@ __Herausforderungen:__
 
 ### Herausforderung Sicherheitsgefühl
 
-  --{{0}}--
+    --{{0}}--
 Ein Aspekt einer defensiven Trajektorienplanung ist die Prüfung von Sichtlinien. Aus welcher Perspektive kann der Roboter aus seiner Umgebung überhaupt wahrgenommen werden? Werden die Passantinnen und Passanten möglicherweise überraschend mit dem Roboter konfrontiert? Um eine Skalierbarkeit sicherzustellen,untersucht das Team die Möglichkeit auch diese Informationen anhand von Kartendaten zu gewinnen. Die nachfolgende Grafik zeigt die Ergebnisse einer solchen Analyse auf der Basis von Open Street Map Daten, die nun mit realweltlichen Messungen verglichen werden. 
 
 <section class="container">
@@ -347,14 +357,12 @@ _Vergleich der Sichtlinienanalysen auf der Basis von OSM Daten und realweltliche
 
 ### Herausforderung Mensch
 
-
-
 Für die Interaktion von Robotern und Menschen exisiert eine Vielzahl von Laboruntersuchungen, es fehlen aber große Studien, die eine realweltliches Verhalten abbilden. 
 
 > Wie verhalten sich die Menschen in der Umgebung des Roboters in tatsächlichen Situationen?
 
-  --{{0}}--
- Die nachfolgenden Grafiken zeigen die erste Ergebnisse einer solchen Studie, die im Rahmen des Projektes RoboTraces in Freiberg durchgeführt wurde. Die Grafik links zeigt die Verteilung der Abstände von Passanten zum Roboter. Offenbar halten die Menschen vom Roboter einen relativ großen Sicherheitsabstand, wenn er sich bewegt. Dies Information muss in die Planung der notwendigen Breite einbezogen werden.
+    --{{0}}--
+Die nachfolgenden Grafiken zeigen die erste Ergebnisse einer solchen Studie, die im Rahmen des Projektes RoboTraces in Freiberg durchgeführt wurde. Die Grafik links zeigt die Verteilung der Abstände von Passanten zum Roboter. Offenbar halten die Menschen vom Roboter einen relativ großen Sicherheitsabstand, wenn er sich bewegt. Dies Information muss in die Planung der notwendigen Breite einbezogen werden.
 
      {{0-1}}
 ![](./images/trau_dich.jpg "Abb.: Histogramm der Abstände von Passanten zum Roboter")
@@ -384,7 +392,7 @@ __Datenlage:__
 
 ## Fazit und Resumee
 
-  --{{0}}--
+    --{{0}}--
 Um einen "Wildwuchs" bei der Etablierung von Roboteranwendungen zu vermeiden, ist eine klare und transparente Planung anhand entsprechender behördlicher Regularien notwendig. Dies setzt aber voraus, dass die Planungskonzepte und Kriterien für autonome Systeme auf Fuß- und Gehwegen verlässlich und nachvollziehbar sind. 
 
   --{{1}}--
@@ -408,9 +416,6 @@ Anwendungsbeispiel:
 
 ***********************************************************
 
-</div>
-
-<div class="right">
 
           {{2-4}}
 ***********************************************************
