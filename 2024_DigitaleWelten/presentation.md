@@ -42,16 +42,16 @@ TU Bergakademie Freiberg
 
 </div>
 
-  --{{0}}--
+    --{{0}}--
 Dieser Vortrag gibt einen Überblick über die Herausforderungen und Chancen der Planung von autonomen Systemen, die auf Fuß- und Gehwegen operieren. Er fasst die in den Projekten "Ready for Smart City Robots" und "RoboTraces" mit verschiedenen Forschungspartnern entwickelten Konzepte zusammen.
 
 
-## Chancen & Herausforderungen 
+## Motivation
 
-  --{{0}}--
+    --{{0}}--
 Kompakte, nicht-automotive autonome Roboter lassen sich intuitiv für eine Vielzahl von Anwendungen nutzen. Der Fokus der gesellschaftlichen Diskussion liegt aktuell zwar auf  klassischen Lieferdiensten in urbanen Räumen. Die automatisierten Plattformen eröffnen aber auch eine Vielzahl von weiteren Anwendungsfeldern und Nutzungsmodelle. 
 
-  --{{1}}--
+    --{{1}}--
 Dabei können die Konzepte des Autonomen Fahrens von Straßenfahrzeugen aber nur bedingt auf die Fuß- und Radwege übertragen werden. Zum einen fehlt es schlicht und ergreifend an einem gemeinsamen Verständnis zum Betrieb der Roboter: Welche Größe und Gewicht dürfen sie haben? Welche Geschwindigkeiten sind zulässig? Welche Sicherheitsstandards müssen eingehalten werden? Ein autonomes Automobil kopiert einen menschlichen Fahrer, ein autonomer Roboter ist dagegen ein neuer Akteur im urbanen Raum, für den die spezifischen Regeln erst noch definiert werden müssen.
 
 
@@ -75,13 +75,15 @@ ABER: _"... sie können aber nur eine Ergänzung zu bestehenden Prozessen und k�
   --{{2}}--
 Allerdings müssen auch ganz pragmatische Gründe betrachtet werden, die Fuß- und Radwege von den Straßen unterscheiden. Die Heterogenität des Operationsgebietes, die Dynamik der Umgebung, die nicht-maschinengerechten Infrastrukturen und Konfigurationen und der rechtliche Rahmen sind technische Herausforderungen, die es zu meistern gilt.
 
-                          {{2-3}}
-***********************************************************
+
+### Herausforderungen
 
 > __Lieferroboter sind keine kleinen Autos! Warum ist das so?__
 
-<details>
-<summary>**Heterogenität der Umgebung**</summary>
+**1. Heterogenität der Umgebung**
+
+                          {{1-2}}
+***********************************************************
 
 <div class="left">
 
@@ -99,10 +101,15 @@ __Herausforderungen:__
 + Anstiege und Gefälle
 
 </div>
-</details>
 
-<details>
-<summary>**Dynamik der Umgebung**</summary>
+-------
+
+***********************************************************
+
+**2. Dynamik der Umgebung**
+
+                          {{2-3}}
+***********************************************************
 
 <div class="left">
 
@@ -119,10 +126,16 @@ __Herausforderungen:__
 + Baustellen, Veranstaltungen, Märkte
 
 </div>
-</details>
 
-<details>
-<summary>**Nicht-Maschinengerechte Infrastrukturen / Konfigurationen**</summary>
+-------
+
+***********************************************************
+
+**3. Nicht-Maschinengerechte Infrastrukturen / Konfigurationen**
+
+                          {{3-4}}
+***********************************************************
+
 
 <div class="left">
 
@@ -140,10 +153,12 @@ __Herausforderungen:__
 
 </div>
 
-</details>
+***********************************************************
 
-<details>
-<summary>**Rechtlicher Rahmen**</summary>
+**4. Rechtlicher Rahmen**
+
+                          {{5-6}}
+***********************************************************
 
 __Herausforderungen:__
 
@@ -156,15 +171,12 @@ __Herausforderungen:__
 >
 > (3) Keine Kraftfahrzeuge im Sinne dieses Gesetzes sind Landfahrzeuge, die durch Muskelkraft fortbewegt werden und mit einem elektromotorischen Hilfsantrieb mit einer Nenndauerleistung von höchstens 0,25 kW ausgestattet sind ...
 
-</details>
-
 ***********************************************************
 
-  --{{2}}--
+### Resultierende Planungsaufgaben
+
+  --{{0}}--
 Vor dem Hintergrund der Einschränkungen beim Betrieb - zu geringen Gehwegbreiten, einem ggf. hohen Passantenaufkommen oder einer schwer einsehbaren Wegekreuzung - ist die multimodale Planung des Einsatzes von autonomen Systemen die Schlüsselaufgabe für deren Einführung. Um zulässige Trajektorien zu identifizieren, müssen sowohl die Nutzbarkeit von einzelnen Streckensegmenten (_Radweg in der XYZ-Straße_) evaluiert als auch die konkrete Pfad unter sozialen und technischen Gesichtspunkten (_Fahrt entlang der Hauswand_) festgelegt werden. Im folgenden wird dies als makroskopische und mikroskopische Planung bezeichnet. 
-
-{{3-4}}
-***********************************************************
 
 > __Ergebnis__: Die _multimodale_ Planung des Einsatzes von autonomen Systemen ist die Schlüsselaufgabe für deren Einführung.
 
@@ -176,7 +188,6 @@ Anmerkungen:
 1. Die makroskopische Planung arbeitet auf attributierten Graphen, die mikroskopische auf Gridstrukturen.
 2. Beide Aspekte sind die Grundlage für die Einrichtung von "_Attributierten Roboter Korridoren_" notwendig.
 
-***********************************************************
 
 ## Makroskopische Planung
 
@@ -212,18 +223,20 @@ Die nachfolgende Tabelle illustriert die unzureichende Datenlage für die Planun
                     {{0-1}}
 ***********************************************************
 
-Open Street Map kann die Anfragen zu Attributen der Fuß- und Radwege nur unzureichend beantworten.
+Open Street Map kann die Anfragen zu Attributen - Wegbreite, Oberflächenstruktur, usw. - der Fuß- und Radwege nur unzureichend beantworten. Die Tabelle zeigt die prozentualen Anteile der hinterlegten Attribute für die Stadt Dresden.
 
 <!-- data-type="none" -->
-| Attribute / Tags | intercity | local | cycleway | footway | sidewalk | bicycle |
-| ---------------- | --------: | ----: | -------: | ------: | -------: | ------: |
-| `surface`        |       100 |    85 |       98 |      85 |       88 |      86 |
-| `width`          |         1 |     8 |       14 |       3 |        5 |       7 |
-| `smoothness`     |        80 |    51 |       79 |      35 |       48 |      49 |
-| `max_width`      |         0 |     0 |        0 |       0 |        0 |       0 |
-| `est_width`      |         0 |     0 |        0 |       0 |        0 |       0 |
+| Attribute / Tags | `intercity` | `local` | `cycleway` | `footway` | `sidewalk` | `bicycle` |
+| ---------------- | ----------: | ------: | ---------: | --------: | ---------: | --------: |
+| `<surface>`      |         100 |      85 |         98 |        85 |         88 |        86 |
+| `<width>`        |           1 |       8 |         14 |         3 |          5 |         7 |
+| `<smoothness>`   |          80 |      51 |         79 |        35 |         48 |        49 |
+| `<max_width>`    |           0 |       0 |          0 |         0 |          0 |         0 |
+| `<est_width>`    |           0 |       0 |          0 |         0 |          0 |         0 |
 
-_Übersicht der hinterlegten Attribute für die Straßen und Wege der Stadt Dresden aus OSM (Feb. 2024)_
+_Übersicht der Anteile unterschiedlicher Weg- und Straßentypen mit Blick auf die hinterlegten Attribute in Dresden aus dem OSM-Datensatz (Feb. 2024)_
+
+> Alternative öffentliche Datenquellen, die Fuß- und Radwege als eigenständige Infrastruktur mit den zugehörigen Parametern abbilden, konnten nicht identifiziert werden. 
 
 ***********************************************************
 
@@ -305,7 +318,7 @@ __Herausforderungen:__
 ### Herausforderung Sicherheitsgefühl
 
   --{{0}}--
-Ein Aspekt einer defensiven Trajektorienplanung ist die Prüfung von Sichtlinien. Aus welcher Perspektive kann der Roboter aus seiner Umgebung überhaupt wahrgenommen werden? Diese Planung sollte im besten Fall anhand von Kartendaten vorgenommen werden, so dass eine aufwändige Erfassung vor Ort nicht notwendig ist. Die nachfolgende Grafik zeigt die Ergebnisse einer solchen Analyse auf der Basis von Open Street Map Daten, die nun mit realweltlichen Messungen verglichen werden. 
+Ein Aspekt einer defensiven Trajektorienplanung ist die Prüfung von Sichtlinien. Aus welcher Perspektive kann der Roboter aus seiner Umgebung überhaupt wahrgenommen werden? Werden die Passantinnen und Passanten möglicherweise überraschend mit dem Roboter konfrontiert? Um eine Skalierbarkeit sicherzustellen,untersucht das Team die Möglichkeit auch diese Informationen anhand von Kartendaten zu gewinnen. Die nachfolgende Grafik zeigt die Ergebnisse einer solchen Analyse auf der Basis von Open Street Map Daten, die nun mit realweltlichen Messungen verglichen werden. 
 
 <section>
 <div class="left">
@@ -325,21 +338,30 @@ _Vergleich der Sichtlinienanalysen auf der Basis von OSM Daten und realweltliche
 
 ### Herausforderung Mensch
 
-  --{{0}}--
-Für die Interaktion von Robotern und Menschen exisiert eine Vielzahl von Laboruntersuchungen, es fehlen aber große Studien, die eine realweltliches Verhalten abbilden. Die nachfolgenden Grafiken zeigen die erste Ergebnisse einer solchen Studie, die im Rahmen des Projektes RoboTraces in Freiberg durchgeführt wurde. Die Grafik links zeigt die Verteilung der Abstände von Passanten zum Roboter. Die Grafik rechts zeigt beispielhafte Trajektorien von Personen auf der Burgstraße in Freiberg. Das Ziel der Untersuchung ist es, allgemeine kontextbasierte Verhaltensregeln zu identifizieren, die in die Planung der Trajektorien einfließen können.
 
-Wie verhalten sich die Menschen in der Umgebung des Roboters?
+
+Für die Interaktion von Robotern und Menschen exisiert eine Vielzahl von Laboruntersuchungen, es fehlen aber große Studien, die eine realweltliches Verhalten abbilden. 
+
+> Wie verhalten sich die Menschen in der Umgebung des Roboters in tatsächlichen Situationen?
+
+  --{{0}}--
+ Die nachfolgenden Grafiken zeigen die erste Ergebnisse einer solchen Studie, die im Rahmen des Projektes RoboTraces in Freiberg durchgeführt wurde. Die Grafik links zeigt die Verteilung der Abstände von Passanten zum Roboter. Offenbar halten die Menschen vom Roboter einen relativ großen Sicherheitsabstand, wenn er sich bewegt. Dies Information muss in die Planung der notwendigen Breite einbezogen werden.
 
 {{0-1}}
 ![](./images/trau_dich.jpg "Abb.: Histogramm der Abstände von Passanten zum Roboter")
 
+  --{{1}}--
+Die zweite Grafik rechts zeigt beispielhafte in einer Draufsicht die Trajektorien von Personen auf der Burgstraße in Freiberg. Die Menschen bewegen sich, wegen der Straßenführung links oder rechts am Roboter vorbei. In dieser Situation ist die Vorhersage und damit die Planung des Verhaltens einfach zu rekonstruieren. In freien Arealen ist dies ungleich schwerer. Das Ziel der Untersuchung ist es, allgemeine kontextbasierte Verhaltensregeln zu identifizieren, die in die Planung der Trajektorien einfließen können.
+
 {{1-2}}
 ![](./images/Interaktions_schemas_HMI.jpg "Abb.: Beispielhafte Trajektorien von Personen auf der Burgstraße in Freiberg")
 
+## Datenerhebung und Evaluation
 
-## Methodik
+> Wie kann die Korrektheit der Planungskonzepte überprüft werden? Auf welcher Basis entstehend die Akzeptanzkriterien?
 
->Auf welchen Daten basieren die Arbeiten?
+  --{{0}}--
+Die nachfolgende Grafik zeigt den Aufbau des experimentellen Robotersystem _Claudi_, das im Rahmen des RoboTraces Projektes in Freiberg eingesetzt wurde. Der Roboter wurde mit einer Vielzahl von Sensoren ausgestattet, um die Attribute der Umgebung zu erfassen und die Interaktionen mit den Passanten zu dokumentieren. 
 
 ![](./images/Claudi_details.jpg "Abb.: Sensorische Konfiguration des Roboters")<!-- width="70%" -->
 
@@ -349,20 +371,41 @@ Datenlage:
 + wiederkehrender Rundkurs mit 2.5 km Länge
 + Abdeckung unterschiedlicher Kontexte (z. B. Wochenende, Feiertage, Veranstaltungen) und Situationen (Marktplatz, Fußgängerzone, schmale Gassen)
 
+> Das umfangreiche Datenset steht als ROS-Bags auch anderen Forschenden zur Verfügung.
+
 ## Fazit und Resumee
 
   --{{0}}--
-Um einen "Wildwuchs" bei der Etablierung von Roboteranwendungen zu vermeiden, ist eine klare und transparente Planung anhand entsprechender behördlicher Regularien notwendig. Dies setzt aber voraus, dass die Planungskonzepte und Kriterien für autonome Systeme auf Fuß- und Gehwegen verlässlich und nachvollziehbar sind. Die Herausforderungen liegen dabei in der Datenlage, der Abstraktion der Akzeptanzkriterien und der feingranularen Regularien. Gleichzeitig sind die Kommunen in diesen Entwicklungsprozess einzubinden, um entsprechend der lokalen Besonderheiten diese Festlegungen zu treffen.
+Um einen "Wildwuchs" bei der Etablierung von Roboteranwendungen zu vermeiden, ist eine klare und transparente Planung anhand entsprechender behördlicher Regularien notwendig. Dies setzt aber voraus, dass die Planungskonzepte und Kriterien für autonome Systeme auf Fuß- und Gehwegen verlässlich und nachvollziehbar sind. 
+
+  --{{1}}--
+Das Anwendungsbeispiel zeigt die intendierte Nutzung der makroskopischen Planung für die Innenstadt von Dresden. Welche Reichweite könnte ein Roboter entfalten, der nur auf Fußwegen oder auf Fuß- und Radwegen operieren darf? Die Darstellung, die auf der Auswertung von OSM basiert, zeigt dass die Unterschiede zwischen den beiden Szenarien gering sind. Allerdings schließt dies Analyse die angesprochenen Lücken in der Datenlage mit ein - aktuell können wir die Frage nicht beantworten, ob der Roboter Teile des Wegenetzes ggf. gar nicht benutzen kann. 
+
+  --{{2}}--
+Die Herausforderungen liegen dabei in der Datenlage, der Abstraktion der Akzeptanzkriterien und der feingranularen Regularien. Gleichzeitig sind die Kommunen in diesen Entwicklungsprozess einzubinden, um entsprechend der lokalen Besonderheiten diese Festlegungen zu treffen.
+
+  --{{3}}--
+An einigen Stellen funktioniert es mit der _Readiness_ aber bereits - der Roboter Claudi ist (zufällig) so groß, dass er Zugangssysteme problemlos passieren kann. Auf dem Hinweg funktioniert das übrigens auch, der Roboter passt unter der Schranke hindurch 😃.
 
 <div class="left">
 
 __Vision: Verlässliche Prognosen für die Bewegung von autonomen Systemen auf Fuß- und Gehwegen__
 
+          {{1-4}}
+***********************************************************
+
+Anwendungsbeispiel:
+
 ![](./images/isochronen_Dresden.jpg "Abb.: Abdeckungsareal eines Roboters mit 15min Fahrzeit (3.6km/h) startend vom Rathaus Dresden (rot Fußwege, blau Fuß- und Radwege)")
+
+***********************************************************
 
 </div>
 
 <div class="right">
+
+          {{2-4}}
+***********************************************************
 
 __Hürden auf dem Weg dahin:__
 
@@ -372,7 +415,9 @@ __Hürden auf dem Weg dahin:__
 
 ... aber wir sind auf einem guten Weg!
 
-{{1-2}}
+***********************************************************
+
+{{3-4}}
 !?[Robot_meets_barrier](./images/robot_meets_barrier.mp4 "In Freiberg ist auch schon die Infrastruktur _Ready for Robots_")<!--autoplay="true" muted="true"-->
 
 </div>
