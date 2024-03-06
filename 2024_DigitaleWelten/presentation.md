@@ -57,8 +57,8 @@ Dieser Vortrag gibt einen Überblick über die Herausforderungen und Chancen der
     --{{0}}--
 Kompakte, nicht-automotive autonome Roboter lassen sich intuitiv für eine Vielzahl von Anwendungen nutzen. Der Fokus der gesellschaftlichen Diskussion liegt aktuell zwar auf  klassischen Lieferdiensten in urbanen Räumen. Die automatisierten Plattformen eröffnen aber auch eine Vielzahl von weiteren Anwendungsfeldern und Nutzungsmodelle. 
 
-    --{{2}}--
-Welche Aspekte beschränken aber den Einsatz von kleineren Robotern auf Fuß- und Radwegen, so dass sie nicht als einfach integrierbare Technologie für unsere Städte betrachtet werden können?
+    --{{1}}--
+Die Ergebnisse verschiedene Forschungsinitiativen machten deutlich, dass eine generelle Einführung von Robotern auf Fuß- und Radwegen nicht umsetzbar ist. Welche Aspekte beschränken aber den Einsatz von kleineren Robotern auf Fuß- und Radwegen, so dass sie nicht als einfach integrierbare Technologie für unsere Städte betrachtet werden können?
 
                           {{0-2}}
 ***********************************************************
@@ -208,7 +208,7 @@ __Herausforderungen:__
   --{{0}}--
 Vor dem Hintergrund der Einschränkungen beim Betrieb - zu geringen Gehwegbreiten, einem ggf. hohen Passantenaufkommen oder einer schwer einsehbaren Wegekreuzung - ist die multimodale Planung des Einsatzes von autonomen Systemen die Schlüsselaufgabe für deren Einführung. Um zulässige Trajektorien zu identifizieren, müssen sowohl die Nutzbarkeit von einzelnen Streckensegmenten (_Radweg in der XYZ-Straße_) evaluiert als auch die konkrete Pfad unter sozialen und technischen Gesichtspunkten (_Fahrt entlang der Hauswand_) festgelegt werden. Im folgenden wird dies als makroskopische und mikroskopische Planung bezeichnet. 
 
-> __Ergebnis__: Die _multimodale_ Planung des Einsatzes von autonomen Systemen ist die Schlüsselaufgabe für deren Einführung.
+> __Ergebnis__: Die Herausforderungen (1), (2) und in Teilen (3) setzen für die Einführung eine roboterspezifische Überplanung eines Operationsgebietes voraus. 
 ![](./images/MakroskopischeSicht_Dresden.jpg "Abb.: Makroskopische Sicht auf Fuß- und Gehwege")
 ![](./images/MirkoskopischeSicht.jpg "Abb.: Mikroskopische Sicht auf konkrete Trajektorien")
 
@@ -409,7 +409,7 @@ __Datenlage:__
 Um einen "Wildwuchs" bei der Etablierung von Roboteranwendungen zu vermeiden, ist eine klare und transparente Planung anhand entsprechender behördlicher Regularien notwendig. Dies setzt aber voraus, dass die Planungskonzepte und Kriterien für autonome Systeme auf Fuß- und Gehwegen verlässlich und nachvollziehbar sind. 
 
   --{{1}}--
-Das Anwendungsbeispiel zeigt die intendierte Nutzung der makroskopischen Planung für die Innenstadt von Dresden. Welche Reichweite könnte ein Roboter entfalten, der nur auf Fußwegen oder auf Fuß- und Radwegen operieren darf? Die Darstellung, die auf der Auswertung von OSM basiert, zeigt dass die Unterschiede zwischen den beiden Szenarien gering sind. Allerdings schließt dies Analyse die angesprochenen Lücken in der Datenlage mit ein - aktuell können wir die Frage nicht beantworten, ob der Roboter Teile des Wegenetzes ggf. gar nicht benutzen kann. 
+Das Anwendungsbeispiel zeigt die intendierte Nutzung der makroskopischen Planung für die Innenstadt von Dresden. Welche Reichweite könnte ein Roboter entfalten, der nur auf Fußwegen oder auf Fuß- und Radwegen operieren darf? Die Darstellung, die auf der Auswertung von OSM basiert, zeigt dass die Unterschiede zwischen den beiden Szenarien gering sind. __Allerdings schließt dies Analyse die angesprochenen Lücken in der Datenlage mit ein - aktuell können wir die Frage nicht beantworten, ob der Roboter Teile des Wegenetzes ggf. gar nicht benutzen kann.__
 
   --{{2}}--
 Die Herausforderungen liegen dabei in der Datenlage, der Abstraktion der Akzeptanzkriterien und der feingranularen Regularien. Gleichzeitig sind die Kommunen in diesen Entwicklungsprozess einzubinden, um entsprechend der lokalen Besonderheiten diese Festlegungen zu treffen.
@@ -425,7 +425,7 @@ __Vision: Verlässliche Prognosen für die Bewegung von autonomen Systemen auf F
 
 Anwendungsbeispiel:
 
-![](./images/isochronen_Dresden.jpg "Abb.: Abdeckungsareal eines Roboters mit 15min Fahrzeit (3.6km/h) startend vom Rathaus Dresden (rot Fußwege, blau Fuß- und Radwege)")
+![](./images/isochronen_Dresden.jpg "Abb.: Abdeckungsareal eines Roboters mit 15min Fahrzeit (3.6km/h) startend vom Rathaus Dresden (rot Fußwege, blau Fuß- und Radwege). Grün gehalten ist die Isocrone, die bei der Verwendung aller Straßen und Weg in der gleichen Zeit erreicht werden kann.")
 
 ***********************************************************
 
